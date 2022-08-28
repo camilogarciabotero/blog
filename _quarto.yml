@@ -2,18 +2,27 @@ project:
   type: website
 
 website:
-  title: "blog"
-  navbar:
+  title: "Miscellaneous"
+  navbar: 
     right:
-      - about.qmd
+      - text: "{{< fa house >}}"
+        href: https://camilo-garcia.quarto.pub
+  page-footer: 
+    center:
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/camilogarciabotero
+      - text: <i class="ai ai-google-scholar"></i> 
+        href: https://scholar.google.com/citations?user=OJ6452UAAAAJ&hl=en
+      - text: "{{< fa brands orcid >}}"
+        href: https://orcid.org/0000-0002-0426-7007
+  search: 
+    location: navbar
+
 format:
   html:
-    theme: cosmo
     css: styles.css
-
-
-
+    theme:
+      light: 
+       - flatly
+      dark: 
+        - darkly
