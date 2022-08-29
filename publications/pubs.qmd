@@ -1,0 +1,10 @@
+---
+title: "What's the best coffee?"
+categories: [publications]
+author: Camilo García
+date: today
+---
+
+- a thing
+
+- another thing

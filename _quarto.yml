@@ -24,9 +24,15 @@ website:
 
 format:
   html:
-    css: styles.css
     theme:
       light: 
        - flatly
+       - style/fonts.scss
       dark: 
         - darkly
+        - style/fonts.scss
+    code-link: true
+    code-copy: hover
+    mainfont: Atkinson Hyperlegible
+    monofont: JetBrains
+    highlight-style: ayu

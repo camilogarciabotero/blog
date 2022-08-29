@@ -6,7 +6,6 @@ date: today
 toc: true
 fig-height: 15
 fig-width: 15
-image: "image.jpg"
 ---
 
 # Introduction

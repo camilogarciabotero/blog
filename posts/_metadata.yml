@@ -6,3 +6,14 @@ freeze: true
 
 # Enable banner style title blocks
 title-block-banner: true
+toc-location: left
+# Giscus comments
+
+comments:
+  giscus:
+    repo: camilogarciabotero/blog
+    category: Blog
+
+author: 
+  - name: Camilo García
+    affiliation: Universidad Eafit
