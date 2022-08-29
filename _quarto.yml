@@ -11,10 +11,14 @@ website:
     center:
       - icon: github
         href: https://github.com/camilogarciabotero
-      - text: <i class="ai ai-google-scholar"></i> 
+      - text: "{{< ai google-scholar >}}"
         href: https://scholar.google.com/citations?user=OJ6452UAAAAJ&hl=en
       - text: "{{< fa brands orcid >}}"
         href: https://orcid.org/0000-0002-0426-7007
+      - icon: twitter
+        href: https://twitter.com/gaspardelanoche
+      - text: "{{< fa house >}}"
+        href: https://camilo-garcia.quarto.pub
   search: 
     location: navbar
 
