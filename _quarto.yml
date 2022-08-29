@@ -4,9 +4,7 @@ project:
 website:
   title: "Miscellaneous"
   navbar: 
-    right:
-      - text: "{{< fa house >}}"
-        href: https://camilo-garcia.quarto.pub
+    background: primary
   page-footer: 
     center:
       - icon: github
@@ -21,6 +19,8 @@ website:
         href: https://camilo-garcia.quarto.pub
   search: 
     location: navbar
+  repo-url: https://github.com/camilogarciabotero/blog
+  repo-actions: [edit, issue]
 
 format:
   html:

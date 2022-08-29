@@ -1,12 +1,72 @@
 ---
-title: "Welcome To My Blog"
-author: "Tristan O'Malley"
-date: "2022-08-25"
-categories: [news]
+title: "What's the best coffee?"
+categories: [tidytuesday, code, analysis]
+author: Camilo García
+date: today
+toc: true
+fig-height: 15
+fig-width: 15
+image: "image.jpg"
 ---
 
-This is the first post in a Quarto blog. Welcome!
+# Introduction
 
-![](thumbnail.jpg)
+This is my first Tidy Tuesday contribution and will be playing around a little bit with  the coffee rating data.
 
-Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
+As a coffee lover I felt that exploring a dataset about coffee was mandatory. The first question that came to me mind was: what is the best coffee and eventually, as looking a little bit deeper into dataset, which country has the best coffees.
+
+I decided then to compare coffee ratings across countries and the associated density of cups rated. Among the main findings it shows that one Ethiopian coffee came to be the best ranked and also that this country's coffees are the best ranked while Haitian coffees show one of the widest range of ratings. Colombian coffee display a moderately good ratings and a very narrow range. 
+```{r}
+#| label: libraries
+#| warning: false
+library(readr)
+library(knitr)
+library(tidyverse)
+library(ggrepel)
+library(ggridges)
+library(hrbrthemes)
+```
+
+# Coffee rating distributions
+```{r}
+#| label: data-improt
+#| warning: false
+coffee <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-07/coffee_ratings.csv')
+
+head(coffee) |>
+ kable()
+```
+
+```{r}
+#| label: coffee-ridges
+#| 
+coffee |>
+  drop_na(any_of("country_of_origin")) |>
+  filter(aroma != 0 & !country_of_origin %in% c("Zambia", "Rwanda", "Papua New Guinea", "Japan", "Mauritius", "Cote d?Ivoire", "Burundi")) |>
+  mutate(country_of_origin = fct_reorder(country_of_origin, total_cup_points)) |> 
+  ggplot(aes(x = total_cup_points, y = country_of_origin, fill = stat(x), label = owner)) +
+  geom_density_ridges_gradient(show.legend = T, alpha = .5, point_alpha = 0.5, jittered_points = TRUE) +
+  theme_ipsum() +
+  scale_fill_viridis_c(alpha = 0.7) +
+  ylab("") +
+  xlab("Total cup points") +
+  labs(
+    title = "Comparison of coffee's ratings across countries and its distribution",
+    subtitle = "Ethiopian coffees seem to be the best. Latinoamerican countries were more abundant in the competition",
+    caption = "Data: TidyTuesday week 28. Plot: @Gaspardelanoche",
+    fill = "Total cup points"
+  ) +
+  theme(
+    plot.title = element_text(size = 20, face = "bold"),
+    plot.subtitle = element_text(size = 18),
+    axis.title.x = element_text(size = 18),
+    axis.title.y = element_text(size = 18),
+    axis.text.y = element_text(size = 18),
+    plot.caption = element_text(size = 16)
+  ) +
+  geom_label_repel(
+    data = subset(coffee, total_cup_points > 89),
+    force = 10,
+    xlim = c(85, NA)
+  )
+```

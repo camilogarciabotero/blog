@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tristan O’Malley">
-<meta name="dcterms.date" content="2022-08-25">
+<meta name="author" content="Camilo García">
+<meta name="dcterms.date" content="2022-08-29">
 
-<title>Miscellaneous - Welcome To My Blog</title>
+<title>Miscellaneous - What’s the best coffee?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -43,6 +106,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/academicons-1.9.2/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/academicons-1.9.2/size.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -69,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -80,20 +145,10 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Miscellaneous</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="https://camilo-garcia.quarto.pub"><i class="fa-solid fa-house" aria-hidden="true"></i></a>
-  </li>  
-</ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
-          </div> <!-- /navcollapse -->
+          <div class="quarto-toggle-container ms-auto">
+              <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+          </div>
+          <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -101,9 +156,11 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome To My Blog</h1>
+      <h1 class="title">What’s the best coffee?</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">news</div>
+                <div class="quarto-category">tidytuesday</div>
+                <div class="quarto-category">code</div>
+                <div class="quarto-category">analysis</div>
               </div>
                   </div>
   </div>
@@ -114,14 +171,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Tristan O’Malley </p>
+               <p>Camilo García </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">August 25, 2022</p>
+        <p class="date">August 29, 2022</p>
       </div>
     </div>
       
@@ -131,18 +188,452 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#coffee-rating-distributions" id="toc-coffee-rating-distributions" class="nav-link" data-scroll-target="#coffee-rating-distributions">Coffee rating distributions</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/blog/edit/main/posts/welcome/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="thumbnail.jpg" class="img-fluid"></p>
-<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>This is my first Tidy Tuesday contribution and will be playing around a little bit with the coffee rating data.</p>
+<p>As a coffee lover I felt that exploring a dataset about coffee was mandatory. The first question that came to me mind was: what is the best coffee and eventually, as looking a little bit deeper into dataset, which country has the best coffees.</p>
+<p>I decided then to compare coffee ratings across countries and the associated density of cups rated. Among the main findings it shows that one Ethiopian coffee came to be the best ranked and also that this country’s coffees are the best ranked while Haitian coffees show one of the widest range of ratings. Colombian coffee display a moderately good ratings and a very narrow range.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hrbrthemes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="coffee-rating-distributions" class="level1">
+<h1>Coffee rating distributions</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>coffee <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-07/coffee_ratings.csv'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(coffee) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 1%">
+<col style="width: 3%">
+<col style="width: 2%">
+<col style="width: 5%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 4%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 4%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 4%">
+<col style="width: 1%">
+<col style="width: 2%">
+<col style="width: 3%">
+<col style="width: 1%">
+<col style="width: 2%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 2%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 4%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 2%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">total_cup_points</th>
+<th style="text-align: left;">species</th>
+<th style="text-align: left;">owner</th>
+<th style="text-align: left;">country_of_origin</th>
+<th style="text-align: left;">farm_name</th>
+<th style="text-align: left;">lot_number</th>
+<th style="text-align: left;">mill</th>
+<th style="text-align: left;">ico_number</th>
+<th style="text-align: left;">company</th>
+<th style="text-align: left;">altitude</th>
+<th style="text-align: left;">region</th>
+<th style="text-align: left;">producer</th>
+<th style="text-align: right;">number_of_bags</th>
+<th style="text-align: left;">bag_weight</th>
+<th style="text-align: left;">in_country_partner</th>
+<th style="text-align: left;">harvest_year</th>
+<th style="text-align: left;">grading_date</th>
+<th style="text-align: left;">owner_1</th>
+<th style="text-align: left;">variety</th>
+<th style="text-align: left;">processing_method</th>
+<th style="text-align: right;">aroma</th>
+<th style="text-align: right;">flavor</th>
+<th style="text-align: right;">aftertaste</th>
+<th style="text-align: right;">acidity</th>
+<th style="text-align: right;">body</th>
+<th style="text-align: right;">balance</th>
+<th style="text-align: right;">uniformity</th>
+<th style="text-align: right;">clean_cup</th>
+<th style="text-align: right;">sweetness</th>
+<th style="text-align: right;">cupper_points</th>
+<th style="text-align: right;">moisture</th>
+<th style="text-align: right;">category_one_defects</th>
+<th style="text-align: right;">quakers</th>
+<th style="text-align: left;">color</th>
+<th style="text-align: right;">category_two_defects</th>
+<th style="text-align: left;">expiration</th>
+<th style="text-align: left;">certification_body</th>
+<th style="text-align: left;">certification_address</th>
+<th style="text-align: left;">certification_contact</th>
+<th style="text-align: left;">unit_of_measurement</th>
+<th style="text-align: right;">altitude_low_meters</th>
+<th style="text-align: right;">altitude_high_meters</th>
+<th style="text-align: right;">altitude_mean_meters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">90.58</td>
+<td style="text-align: left;">Arabica</td>
+<td style="text-align: left;">metad plc</td>
+<td style="text-align: left;">Ethiopia</td>
+<td style="text-align: left;">metad plc</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">metad plc</td>
+<td style="text-align: left;">2014/2015</td>
+<td style="text-align: left;">metad agricultural developmet plc</td>
+<td style="text-align: left;">1950-2200</td>
+<td style="text-align: left;">guji-hambela</td>
+<td style="text-align: left;">METAD PLC</td>
+<td style="text-align: right;">300</td>
+<td style="text-align: left;">60 kg</td>
+<td style="text-align: left;">METAD Agricultural Development plc</td>
+<td style="text-align: left;">2014</td>
+<td style="text-align: left;">April 4th, 2015</td>
+<td style="text-align: left;">metad plc</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Washed / Wet</td>
+<td style="text-align: right;">8.67</td>
+<td style="text-align: right;">8.83</td>
+<td style="text-align: right;">8.67</td>
+<td style="text-align: right;">8.75</td>
+<td style="text-align: right;">8.50</td>
+<td style="text-align: right;">8.42</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">8.75</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Green</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">April 3rd, 2016</td>
+<td style="text-align: left;">METAD Agricultural Development plc</td>
+<td style="text-align: left;">309fcf77415a3661ae83e027f7e5f05dad786e44</td>
+<td style="text-align: left;">19fef5a731de2db57d16da10287413f5f99bc2dd</td>
+<td style="text-align: left;">m</td>
+<td style="text-align: right;">1950</td>
+<td style="text-align: right;">2200</td>
+<td style="text-align: right;">2075</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">89.92</td>
+<td style="text-align: left;">Arabica</td>
+<td style="text-align: left;">metad plc</td>
+<td style="text-align: left;">Ethiopia</td>
+<td style="text-align: left;">metad plc</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">metad plc</td>
+<td style="text-align: left;">2014/2015</td>
+<td style="text-align: left;">metad agricultural developmet plc</td>
+<td style="text-align: left;">1950-2200</td>
+<td style="text-align: left;">guji-hambela</td>
+<td style="text-align: left;">METAD PLC</td>
+<td style="text-align: right;">300</td>
+<td style="text-align: left;">60 kg</td>
+<td style="text-align: left;">METAD Agricultural Development plc</td>
+<td style="text-align: left;">2014</td>
+<td style="text-align: left;">April 4th, 2015</td>
+<td style="text-align: left;">metad plc</td>
+<td style="text-align: left;">Other</td>
+<td style="text-align: left;">Washed / Wet</td>
+<td style="text-align: right;">8.75</td>
+<td style="text-align: right;">8.67</td>
+<td style="text-align: right;">8.50</td>
+<td style="text-align: right;">8.58</td>
+<td style="text-align: right;">8.42</td>
+<td style="text-align: right;">8.42</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">8.58</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Green</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">April 3rd, 2016</td>
+<td style="text-align: left;">METAD Agricultural Development plc</td>
+<td style="text-align: left;">309fcf77415a3661ae83e027f7e5f05dad786e44</td>
+<td style="text-align: left;">19fef5a731de2db57d16da10287413f5f99bc2dd</td>
+<td style="text-align: left;">m</td>
+<td style="text-align: right;">1950</td>
+<td style="text-align: right;">2200</td>
+<td style="text-align: right;">2075</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">89.75</td>
+<td style="text-align: left;">Arabica</td>
+<td style="text-align: left;">grounds for health admin</td>
+<td style="text-align: left;">Guatemala</td>
+<td style="text-align: left;">san marcos barrancas “san cristobal cuch</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">1600 - 1800 m</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Specialty Coffee Association</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">May 31st, 2010</td>
+<td style="text-align: left;">Grounds for Health Admin</td>
+<td style="text-align: left;">Bourbon</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">8.42</td>
+<td style="text-align: right;">8.50</td>
+<td style="text-align: right;">8.42</td>
+<td style="text-align: right;">8.42</td>
+<td style="text-align: right;">8.33</td>
+<td style="text-align: right;">8.42</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">9.25</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">May 31st, 2011</td>
+<td style="text-align: left;">Specialty Coffee Association</td>
+<td style="text-align: left;">36d0d00a3724338ba7937c52a378d085f2172daa</td>
+<td style="text-align: left;">0878a7d4b9d35ddbf0fe2ce69a2062cceb45a660</td>
+<td style="text-align: left;">m</td>
+<td style="text-align: right;">1600</td>
+<td style="text-align: right;">1800</td>
+<td style="text-align: right;">1700</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">89.00</td>
+<td style="text-align: left;">Arabica</td>
+<td style="text-align: left;">yidnekachew dabessa</td>
+<td style="text-align: left;">Ethiopia</td>
+<td style="text-align: left;">yidnekachew dabessa coffee plantation</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">wolensu</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">yidnekachew debessa coffee plantation</td>
+<td style="text-align: left;">1800-2200</td>
+<td style="text-align: left;">oromia</td>
+<td style="text-align: left;">Yidnekachew Dabessa Coffee Plantation</td>
+<td style="text-align: right;">320</td>
+<td style="text-align: left;">60 kg</td>
+<td style="text-align: left;">METAD Agricultural Development plc</td>
+<td style="text-align: left;">2014</td>
+<td style="text-align: left;">March 26th, 2015</td>
+<td style="text-align: left;">Yidnekachew Dabessa</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Natural / Dry</td>
+<td style="text-align: right;">8.17</td>
+<td style="text-align: right;">8.58</td>
+<td style="text-align: right;">8.42</td>
+<td style="text-align: right;">8.42</td>
+<td style="text-align: right;">8.50</td>
+<td style="text-align: right;">8.25</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">8.67</td>
+<td style="text-align: right;">0.11</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Green</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">March 25th, 2016</td>
+<td style="text-align: left;">METAD Agricultural Development plc</td>
+<td style="text-align: left;">309fcf77415a3661ae83e027f7e5f05dad786e44</td>
+<td style="text-align: left;">19fef5a731de2db57d16da10287413f5f99bc2dd</td>
+<td style="text-align: left;">m</td>
+<td style="text-align: right;">1800</td>
+<td style="text-align: right;">2200</td>
+<td style="text-align: right;">2000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">88.83</td>
+<td style="text-align: left;">Arabica</td>
+<td style="text-align: left;">metad plc</td>
+<td style="text-align: left;">Ethiopia</td>
+<td style="text-align: left;">metad plc</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">metad plc</td>
+<td style="text-align: left;">2014/2015</td>
+<td style="text-align: left;">metad agricultural developmet plc</td>
+<td style="text-align: left;">1950-2200</td>
+<td style="text-align: left;">guji-hambela</td>
+<td style="text-align: left;">METAD PLC</td>
+<td style="text-align: right;">300</td>
+<td style="text-align: left;">60 kg</td>
+<td style="text-align: left;">METAD Agricultural Development plc</td>
+<td style="text-align: left;">2014</td>
+<td style="text-align: left;">April 4th, 2015</td>
+<td style="text-align: left;">metad plc</td>
+<td style="text-align: left;">Other</td>
+<td style="text-align: left;">Washed / Wet</td>
+<td style="text-align: right;">8.25</td>
+<td style="text-align: right;">8.50</td>
+<td style="text-align: right;">8.25</td>
+<td style="text-align: right;">8.50</td>
+<td style="text-align: right;">8.42</td>
+<td style="text-align: right;">8.33</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">8.58</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Green</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">April 3rd, 2016</td>
+<td style="text-align: left;">METAD Agricultural Development plc</td>
+<td style="text-align: left;">309fcf77415a3661ae83e027f7e5f05dad786e44</td>
+<td style="text-align: left;">19fef5a731de2db57d16da10287413f5f99bc2dd</td>
+<td style="text-align: left;">m</td>
+<td style="text-align: right;">1950</td>
+<td style="text-align: right;">2200</td>
+<td style="text-align: right;">2075</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">88.83</td>
+<td style="text-align: left;">Arabica</td>
+<td style="text-align: left;">ji-ae ahn</td>
+<td style="text-align: left;">Brazil</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: left;">30 kg</td>
+<td style="text-align: left;">Specialty Coffee Institute of Asia</td>
+<td style="text-align: left;">2013</td>
+<td style="text-align: left;">September 3rd, 2013</td>
+<td style="text-align: left;">Ji-Ae Ahn</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">Natural / Dry</td>
+<td style="text-align: right;">8.58</td>
+<td style="text-align: right;">8.42</td>
+<td style="text-align: right;">8.42</td>
+<td style="text-align: right;">8.50</td>
+<td style="text-align: right;">8.25</td>
+<td style="text-align: right;">8.33</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">8.33</td>
+<td style="text-align: right;">0.11</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Bluish-Green</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">September 3rd, 2014</td>
+<td style="text-align: left;">Specialty Coffee Institute of Asia</td>
+<td style="text-align: left;">726e4891cf2c9a4848768bd34b668124d12c4224</td>
+<td style="text-align: left;">b70da261fcc84831e3e9620c30a8701540abc200</td>
+<td style="text-align: left;">m</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>coffee <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(<span class="fu">any_of</span>(<span class="st">"country_of_origin"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(aroma <span class="sc">!=</span> <span class="dv">0</span> <span class="sc">&amp;</span> <span class="sc">!</span>country_of_origin <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Zambia"</span>, <span class="st">"Rwanda"</span>, <span class="st">"Papua New Guinea"</span>, <span class="st">"Japan"</span>, <span class="st">"Mauritius"</span>, <span class="st">"Cote d?Ivoire"</span>, <span class="st">"Burundi"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">country_of_origin =</span> <span class="fu">fct_reorder</span>(country_of_origin, total_cup_points)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> total_cup_points, <span class="at">y =</span> country_of_origin, <span class="at">fill =</span> <span class="fu">stat</span>(x), <span class="at">label =</span> owner)) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges_gradient</span>(<span class="at">show.legend =</span> T, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">point_alpha =</span> <span class="fl">0.5</span>, <span class="at">jittered_points =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ipsum</span>() <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Total cup points"</span>) <span class="sc">+</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Comparison of coffee's ratings across countries and its distribution"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Ethiopian coffees seem to be the best. Latinoamerican countries were more abundant in the competition"</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Data: TidyTuesday week 28. Plot: @Gaspardelanoche"</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Total cup points"</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label_repel</span>(</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> <span class="fu">subset</span>(coffee, total_cup_points <span class="sc">&gt;</span> <span class="dv">89</span>),</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">force =</span> <span class="dv">10</span>,</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="cn">NA</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Picking joint bandwidth of 0.919</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/coffee-ridges-1.png" class="img-fluid" width="1440"></p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -368,10 +859,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="https://scholar.google.com/citations?user=OJ6452UAAAAJ&amp;hl=en"><i class="ai ai-google-scholar"></i></a>
+    <a class="nav-link" href="https://scholar.google.com/citations?user=OJ6452UAAAAJ&amp;hl=en"><i class="ai  ai-google-scholar"></i></a>
   </li>  
     <li class="nav-item">
     <a class="nav-link" href="https://orcid.org/0000-0002-0426-7007"><i class="fa-brands fa-orcid" aria-hidden="true"></i></a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/gaspardelanoche">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://camilo-garcia.quarto.pub"><i class="fa-solid fa-house" aria-hidden="true"></i></a>
   </li>  
 </ul>
       </div>
