@@ -1,11 +1,11 @@
 ---
 title: "What's the best coffee?"
 categories: [tidytuesday, code, analysis]
-author: Camilo García
 date: today
 toc: true
 fig-height: 15
 fig-width: 15
+image: "thumbnail.jpg"
 ---
 
 # Introduction
