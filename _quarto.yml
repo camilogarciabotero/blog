@@ -16,7 +16,7 @@ website:
       - icon: twitter
         href: https://twitter.com/gaspardelanoche
       - text: "{{< fa house >}}"
-        href: https://camilo-garcia.quarto.pub
+        href: https://camilogarciabotero.github.io/
   search: 
     location: navbar
   repo-url: https://github.com/camilogarciabotero/blog
