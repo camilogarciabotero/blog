@@ -1,6 +1,6 @@
 ---
 title: "Netflix titles per country"
-date: today
+date: 2021-04-30
 categories: [news, code, analysis, tidytuesday, animated]
 image: "image.jpg"
 ---
