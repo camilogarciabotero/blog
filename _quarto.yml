@@ -3,8 +3,12 @@ project:
 
 website:
   title: "Miscellaneous"
+  description: 'Collection of publicly available miscellaneous posts created by Camilo García'
+
   navbar: 
     background: primary
+    # logo: img/logo_rounded.png
+
   page-footer: 
     center:
       - icon: github
@@ -17,8 +21,10 @@ website:
         href: https://twitter.com/gaspardelanoche
       - text: "{{< fa house >}}"
         href: https://camilogarciabotero.github.io/
-  search: 
+
+  search:
     location: navbar
+
   repo-url: https://github.com/camilogarciabotero/blog
   repo-actions: [edit, issue]
 
@@ -33,6 +39,6 @@ format:
         - style/fonts.scss
     code-link: true
     code-copy: hover
-    mainfont: Atkinson Hyperlegible
+    mainfont: "Red Hat Text"#Atkinson Hyperlegible
     monofont: JetBrains
     highlight-style: ayu
