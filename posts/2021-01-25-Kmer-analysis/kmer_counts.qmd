@@ -1,0 +1,159 @@
+---
+title: "K-mer counts on genomes"
+date: 2021-02-25
+categories: [bioinformatics, code, analysis]
+fig-width: 10
+fig-height: 12
+fig-dpi: 300
+execute: 
+  cache: true
+citation: true
+---
+
+
+# Libraries
+
+```{r libraries, message=FALSE, warning=FALSE}
+library(fs)
+library(tidyverse)
+library(patchwork)
+library(reticulate)
+library(ggprism)
+library(ggrepel)
+library(data.table)
+library(knitr)
+```
+
+# Downloading genomes
+
+The first steps of this challenge requires genome data. A very practical way to download data programmatically is to use `ncbi-genome-downlad` [program](). Here a you can see how to use it:
+
+Then using we will download complete genomes from the *Pseudomonas syringae* and drop them into the **Genome** folder. In the following line we select \~37 genomes from the organism.
+
+```{zsh}
+ngd -n -s refseq -F fasta --genera "Pseudomonas syringae" -l complete bacteria
+```
+
+
+```{zsh}
+#| label: downloading_ngd
+#| eval: false
+ngd -s refseq\ 
+    -F fasta\
+    --genera "Pseudomonas syringae"\
+    -l complete\
+    --flat-output bacteria\
+    -o Data/Genomes
+
+gzip -d Data/Genomes/*
+```
+
+
+# Filenames cleaning
+
+```{zsh}
+python ~/Programs/Bioinf_tools/bit-dedupe-fasta-headers.py -h
+```
+
+```{zsh}
+#| eval: false
+for F in Genomes/*.fna ; do
+    N=$(basename $F .fna) ;
+    python /Users/camilogarcia/Programs/Bioinf_tools/bit-dedupe-fasta-headers.py -i $F -o $N_renamed.mfa ;
+done
+```
+
+```{zsh}
+#| eval: false
+for F in Genomes/*.fna; do
+    mv -- "$F" \
+    "$(awk 'NR==1{printf("%s_%s_%s\n",$2,$3,substr($1,2));exit}' "$F")".fna
+done
+```
+
+# K-mers scanning on genomes
+
+
+[![](imgs/carbon_kmer_count.png)](https://github.com/camilogarciabotero/Biolibrary)
+
+## Script help & parallel execution
+
+```{zsh}
+python ~/Projects/Biolibrary/kmer_count.py -h
+```
+
+```{zsh, eval= F}
+l ~/Projects/Random/Genomes/Pseudomonas_syringae_NZ* | parallel "python kmer_count.py -k 2 {} {/.}.csv"
+```
+
+```{zsh, echo = F}
+ls Data/Kmers
+```
+
+# Importing & cleaning
+
+```{r}
+#| warning: false
+
+# posts/2021-01-25-Kmer-analysis/
+
+files  <- dir_ls("data/Kmers")
+
+dataset  <- files |>
+  map_df(read_csv)
+
+dataset
+
+total <- dataset |> 
+  mutate(kmer = as_factor(kmer)) |> 
+  group_by(kmer) |> 
+  summarise(total = sum(kmer_value))
+
+summary(total) |> 
+  kable()
+```
+
+# K-mers counts frequency plot
+
+```{r}
+#| label: kmer-plot
+#| warning: false
+
+kmers_plot <- total |>
+  ggplot(aes(total)) +
+  geom_histogram(stat = "count", color = "#8A8A8A") +
+  geom_label_repel(aes(label = paste(kmer, "appears", max(total), "\n times in all genomes"), y = 120), data = . %>% filter(total == max(total)), min.segment.length = 0, segment.colour = "black") +
+  geom_vline(xintercept = mean(total$total), linetype = "dashed", color = "#C60000") +
+  annotate("label", label = expression(paste(mu, "=", 818)), x = 1100, y = 350, size = 4, colour = "#C60000") +
+  scale_x_continuous(guide = "prism_offset_minor", trans = "log10", limits = c(1, 18000), n.breaks = 10) +
+  theme(
+    axis.line.x = element_line(color = "black")
+  ) +
+  labs(
+    x = "K-mer value [n]",
+    y = "Absolute frequency [n]"
+  ) +
+  coord_cartesian(expand = F)
+
+kmers_plot_intervals <- total |>
+  mutate(intervals = cut(total, breaks = 19)) |> 
+  ggplot(aes(y = intervals)) +
+  geom_histogram(stat = "count") +
+  scale_x_continuous(guide = "prism_offset_minor") +
+  theme(
+    axis.line.x  = element_line(color = "white")
+  ) +
+  labs(
+    x = "Absolute frequency [n]",
+    y = ""
+  ) +
+  coord_cartesian(expand = F)
+#   ggsave("kmers_freq_intervals_01.png", width = 10, height = 10, dpi = 400)
+ 
+
+kmers_plot / kmers_plot_intervals
+#   ggsave("kmers_freq_plots_01.png", width = 10, height = 12, dpi = 400)
+
+```
+
+

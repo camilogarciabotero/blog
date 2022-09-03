@@ -3,6 +3,9 @@ title: "Netflix titles per country"
 date: 2021-04-30
 categories: [news, code, analysis, tidytuesday, animated]
 image: "image.jpg"
+execute: 
+  cache: true
+citation: true
 ---
 
 Since Netflix has been dominating all the straemaing platforms, several months ago decided to analyze the releasing titles nationality. This was possible by using several rstats libraries and the released dataset on the [TidyTuesday](https://github.com/rfordatascience/tidytuesday) project.

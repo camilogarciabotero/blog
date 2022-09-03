@@ -15,5 +15,14 @@ comments:
     category: Blog
 
 author: 
-  - name: Camilo García
+  - name: Camilo García-Botero
     affiliation: Eafit University
+    orcid: 0000-0002-0426-7007
+    url: https://camilogarciabotero.github.io/
+
+citation:
+    type: article
+    # container-title: "Journal of Data Science Software"
+    url: https://camilogarciabotero.github.io/biocomp/blog/
+
+google-scholar: true
