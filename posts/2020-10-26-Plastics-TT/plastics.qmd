@@ -1,0 +1,73 @@
+---
+title: "Plastic pollution in countries"
+date: 2020-10-26
+categories: [tidytuesday, code, analysis]
+image: "plastics.jpeg"
+fig-dpi: 300
+fig-width: 10
+fig-height: 10
+execute: 
+  cache: true
+  freeze: true
+citation: true
+---
+
+# Libraries
+```{r}
+#| label: libs
+#| warning: false
+library(tidyverse) 
+library(tidytuesdayR)
+library(ggprism)
+library(rmarkdown)
+library(countrycode)
+```
+
+# Data import
+
+Using the `tidytuesdayR` package this task is easy:
+
+```{r}
+#| label: data-import
+data <-  tidytuesdayR::tt_load(2021, week = 5)
+plastics <- data$plastics
+```
+
+# Total plastic counts per country
+
+```{r}
+#| label: plastics_country
+#| warning: false
+plastics_country <- plastics |>
+  mutate(country = case_when(
+    country == "ECUADOR" ~ "Ecuador",
+    country == "NIGERIA" ~ "Nigeria",
+    country == "United Kingdom of Great Britain & Northern Ireland" ~ "Ireland",
+    TRUE ~ country
+  )) |>
+  group_by(country) |> 
+  summarise(
+    total = sum(grand_total)
+  ) |>
+  arrange(desc(total)) |>
+  mutate(abbreviation = countrycode(country, "country.name", "cldr.name.en")) |>
+  mutate(flags = countrycode(country, "country.name", "unicode.symbol")) |>
+  filter(!country == "EMPTY") |>
+  mutate(total = ifelse(is.na(total), 0, total))
+```
+
+```{r}
+#| label: plastic-plot
+plastics_country |>
+  ggplot(aes(total, reorder(abbreviation, -total))) +
+  geom_col() +
+  geom_text(aes(label = total), size = 3, color = "black", hjust = -0.7) +
+  labs(
+    x = "Total plastic counts [n]",
+    y = ""
+  ) +
+  theme_minimal() +
+  scale_x_continuous(guide = "prism_offset_minor", limits = c(0, 270000)) +
+  coord_cartesian(expand = FALSE)
+```
+

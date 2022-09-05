@@ -1,0 +1,14 @@
+{
+  "hash": "f7860543844c9bae880f2df0a7b638a1",
+  "result": {
+    "markdown": "---\ntitle: \"Plastic pollution in countries\"\ndate: 2020-10-26\ncategories: [tidytuesdays, code, analysis]\nfig-dpi: 300\nfig-width: 10\nfig-height: 10\nexecute: \n  cache: true\n  freeze: true\ncitation: true\n---\n\n\n# Libraries\n\n::: {.cell hash='astronouts_cache/html/libs_118d7544953e2fd684b911767710fbe9'}\n\n```{.r .cell-code}\nlibrary(tidyverse) \nlibrary(tidytuesdayR)\nlibrary(ggprism)\nlibrary(rmarkdown)\nlibrary(countrycode)\n```\n:::\n\n\n# Data import\n\nUsing the `tidytuesdayR` package this task is easy:\n\n\n::: {.cell hash='astronouts_cache/html/data-import_f8e84d6470aca54b4ca47f97f1320548'}\n\n```{.r .cell-code}\ndata <-  tidytuesdayR::tt_load(2021, week = 5)\n```\n\n::: {.cell-output .cell-output-stderr}\n```\n--- Compiling #TidyTuesday Information for 2021-01-26 ----\n```\n:::\n\n::: {.cell-output .cell-output-stderr}\n```\n--- There is 1 file available ---\n```\n:::\n\n::: {.cell-output .cell-output-stderr}\n```\n--- Starting Download ---\n```\n:::\n\n::: {.cell-output .cell-output-stdout}\n```\n\n\tDownloading file 1 of 1: `plastics.csv`\n```\n:::\n\n::: {.cell-output .cell-output-stderr}\n```\n--- Download complete ---\n```\n:::\n\n```{.r .cell-code}\nplastics <- data$plastics\n```\n:::\n\n\n# Total plastic counts per country\n\n\n::: {.cell hash='astronouts_cache/html/plastics_country_5ed9dcf50826e1bfa0b24cd64e5f8011'}\n\n```{.r .cell-code}\nplastics_country <- plastics |>\n  mutate(country = case_when(\n    country == \"ECUADOR\" ~ \"Ecuador\",\n    country == \"NIGERIA\" ~ \"Nigeria\",\n    country == \"United Kingdom of Great Britain & Northern Ireland\" ~ \"Ireland\",\n    TRUE ~ country\n  )) |>\n  group_by(country) |> \n  summarise(\n    total = sum(grand_total)\n  ) |>\n  arrange(desc(total)) |>\n  mutate(abbreviation = countrycode(country, \"country.name\", \"cldr.name.en\")) |>\n  mutate(flags = countrycode(country, \"country.name\", \"unicode.symbol\")) |>\n  filter(!country == \"EMPTY\") |>\n  mutate(total = ifelse(is.na(total), 0, total))\n```\n:::\n\n::: {.cell hash='astronouts_cache/html/plastic-plot_b25257a52856afa6cf33c97aa834e65b'}\n\n```{.r .cell-code}\nplastics_country |>\n  ggplot(aes(total, reorder(abbreviation, -total))) +\n  geom_col() +\n  geom_text(aes(label = total), size = 3, color = \"black\", hjust = -0.7) +\n  labs(\n    x = \"Total plastic counts [n]\",\n    y = \"\"\n  ) +\n  theme_minimal() +\n  scale_x_continuous(guide = \"prism_offset_minor\", limits = c(0, 270000)) +\n  coord_cartesian(expand = FALSE)\n```\n\n::: {.cell-output-display}\n![](astronouts_files/figure-html/plastic-plot-1.png){width=3000}\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

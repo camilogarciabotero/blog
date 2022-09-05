@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "posts/2020-10-26-Plastics-TT/plastics.html",
+    "href": "posts/2020-10-26-Plastics-TT/plastics.html",
+    "title": "Plastic pollution in countries",
+    "section": "",
+    "text": "Data import\nUsing the tidytuesdayR package this task is easy:\n\ndata <-  tidytuesdayR::tt_load(2021, week = 5)\n\n--- Compiling #TidyTuesday Information for 2021-01-26 ----\n\n\n--- There is 1 file available ---\n\n\n--- Starting Download ---\n\n\n\n    Downloading file 1 of 1: `plastics.csv`\n\n\n--- Download complete ---\n\nplastics <- data$plastics\n\nTotal plastic counts per country\n\nplastics_country <- plastics |>\n  mutate(country = case_when(\n    country == \"ECUADOR\" ~ \"Ecuador\",\n    country == \"NIGERIA\" ~ \"Nigeria\",\n    country == \"United Kingdom of Great Britain & Northern Ireland\" ~ \"Ireland\",\n    TRUE ~ country\n  )) |>\n  group_by(country) |> \n  summarise(\n    total = sum(grand_total)\n  ) |>\n  arrange(desc(total)) |>\n  mutate(abbreviation = countrycode(country, \"country.name\", \"cldr.name.en\")) |>\n  mutate(flags = countrycode(country, \"country.name\", \"unicode.symbol\")) |>\n  filter(!country == \"EMPTY\") |>\n  mutate(total = ifelse(is.na(total), 0, total))\n\n\nplastics_country |>\n  ggplot(aes(total, reorder(abbreviation, -total))) +\n  geom_col() +\n  geom_text(aes(label = total), size = 3, color = \"black\", hjust = -0.7) +\n  labs(\n    x = \"Total plastic counts [n]\",\n    y = \"\"\n  ) +\n  theme_minimal() +\n  scale_x_continuous(guide = \"prism_offset_minor\", limits = c(0, 270000)) +\n  coord_cartesian(expand = FALSE)\n\n\n\n\n\n\nCitationBibTeX citation:@online{garcía-botero2020,\n  author = {Camilo García-Botero},\n  editor = {},\n  title = {Plastic Pollution in Countries},\n  date = {2020-10-26},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nCamilo García-Botero. 2020. “Plastic Pollution in\nCountries.” October 26, 2020."
+  },
+  {
     "objectID": "posts/2022-08-31-Coffee-TT/index.html",
     "href": "posts/2022-08-31-Coffee-TT/index.html",
     "title": "What’s the best coffee?",
@@ -32,6 +39,6 @@
     "href": "index.html",
     "title": "Miscellaneous",
     "section": "",
-    "text": "news\n\n\ncode\n\n\nanalysis\n\n\ntidytuesday\n\n\nanimated\n\n\n\n\n\n\n\n\n\n\n\nApr 30, 2021\n\n\nCamilo García-Botero\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nbioinformatics\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 25, 2021\n\n\nCamilo García-Botero\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ntidytuesday\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nJul 20, 2020\n\n\nCamilo García-Botero\n\n\n\n\n\n\nNo matching items"
+    "text": "news\n\n\ncode\n\n\nanalysis\n\n\ntidytuesday\n\n\nanimated\n\n\n\n\n\n\n\n\n\n\n\nApr 30, 2021\n\n\nCamilo García-Botero\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nbioinformatics\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nFeb 25, 2021\n\n\nCamilo García-Botero\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ntidytuesday\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 26, 2020\n\n\nCamilo García-Botero\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\ntidytuesday\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nJul 20, 2020\n\n\nCamilo García-Botero\n\n\n\n\n\n\nNo matching items"
   }
 ]
