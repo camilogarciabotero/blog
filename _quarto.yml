@@ -22,6 +22,8 @@ website:
         href: https://twitter.com/gaspardelanoche
       - text: "{{< fa house >}}"
         href: https://camilogarciabotero.github.io/
+      - text: "{{< fa solid mug-saucer >}}"
+        href: https://www.paypal.com/paypalme/camilogarciabotero
 
   search:
     location: navbar
