@@ -42,6 +42,6 @@ format:
         - style/fonts.scss
     code-link: true
     code-copy: hover
-    mainfont: "Red Hat Text"#Atkinson Hyperlegible
+    mainfont: Atkinson Hyperlegible
     monofont: JetBrains
     highlight-style: ayu

@@ -1,0 +1,50 @@
+---
+title: "How do students' loans change over time?"
+categories: [tidytuesday, code, analysis]
+date: 2021-02-09
+toc: true
+---
+
+Using the `tidytuesdayR` package this task is easy:
+
+```{r}
+#| eval: false
+data <-  tidytuesdayR::tt_load(2021, week = 7)
+student_debt <- data$student_debt
+```
+
+```{r}
+#| echo: false
+#| include: false
+student_debt <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-02-09/student_debt.csv')
+```
+
+
+```{r}
+head(student_debt) |> knitr::kable()
+```
+
+# Students debts over time
+
+```{r}
+library(ggplot2)
+library(ggprism)
+
+student_debt |>
+  ggplot(aes(year, loan_debt, color = race)) +
+  geom_line() +
+  theme_minimal() +
+  theme(
+    legend.title = element_blank(),
+    axis.line = element_line(color = "#000000"),
+    axis.ticks = element_line(color = "#000000"),
+    panel.grid = element_line(color = "#DDDDDD", linetype = "dotted"), # Soft gray
+    legend.position = "top"
+  ) +
+  labs(
+    x = "",
+    y = "Loan debt (USD)"
+  ) +
+  scale_x_continuous(guide = "prism_offset_minor", limits = c(1990,2015)) +
+  scale_y_continuous(guide = "prism_offset_minor", limits = c(1000, 10000)) 
+```

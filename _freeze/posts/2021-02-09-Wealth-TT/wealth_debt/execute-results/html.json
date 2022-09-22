@@ -1,0 +1,14 @@
+{
+  "hash": "61cb32ad755fad1f218464edcb2491ef",
+  "result": {
+    "markdown": "---\ntitle: \"How do students' loans change over time?\"\ncategories: [tidytuesday, code, analysis]\ndate: 2021-02-09\ntoc: true\n---\n\n\nUsing the `tidytuesdayR` package this task is easy:\n\n\n::: {.cell hash='wealth_debt_cache/html/unnamed-chunk-1_1c185b3d1389e749e599586b8a6afd12'}\n\n```{.r .cell-code}\ndata <-  tidytuesdayR::tt_load(2021, week = 7)\nstudent_debt <- data$student_debt\n```\n:::\n\n\n\n::: {.cell hash='wealth_debt_cache/html/unnamed-chunk-3_01cb7cbb64ba938da9acb9dcdf436c50'}\n\n```{.r .cell-code}\nhead(student_debt) |> knitr::kable()\n```\n\n::: {.cell-output-display}\n| year|race     | loan_debt| loan_debt_pct|\n|----:|:--------|---------:|-------------:|\n| 2016|White    | 11108.410|     0.3367511|\n| 2016|Black    | 14224.770|     0.4183588|\n| 2016|Hispanic |  7493.999|     0.2189689|\n| 2013|White    |  8363.605|     0.2845555|\n| 2013|Black    | 10302.660|     0.4122773|\n| 2013|Hispanic |  3177.410|     0.1570289|\n:::\n:::\n\n\n# Students debts over time\n\n\n::: {.cell hash='wealth_debt_cache/html/unnamed-chunk-4_8f6974e853e6dea76821908e6f67d9fb'}\n\n```{.r .cell-code}\nlibrary(ggplot2)\nlibrary(ggprism)\n\nstudent_debt |>\n  ggplot(aes(year, loan_debt, color = race)) +\n  geom_line() +\n  theme_minimal() +\n  theme(\n    legend.title = element_blank(),\n    axis.line = element_line(color = \"#000000\"),\n    axis.ticks = element_line(color = \"#000000\"),\n    panel.grid = element_line(color = \"#DDDDDD\", linetype = \"dotted\"), # Soft gray\n    legend.position = \"top\"\n  ) +\n  labs(\n    x = \"\",\n    y = \"Loan debt (USD)\"\n  ) +\n  scale_x_continuous(guide = \"prism_offset_minor\", limits = c(1990,2015)) +\n  scale_y_continuous(guide = \"prism_offset_minor\", limits = c(1000, 10000)) \n```\n\n::: {.cell-output .cell-output-stderr}\n```\nWarning: Removed 9 row(s) containing missing values (geom_path).\n```\n:::\n\n::: {.cell-output-display}\n![](wealth_debt_files/figure-html/unnamed-chunk-4-1.png){width=672}\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
