@@ -1,0 +1,130 @@
+---
+title: "Population benefited from waste water plants"
+format: html
+categories: [tidytuesday, code, analysis]
+toc: true
+date: 2021-09-20
+---
+
+# Data importing
+
+As usual we can read the {tidytuesday} data directly from the source using the associated link:
+```{r}
+raw_data <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-09-20/HydroWASTE_v10.csv')
+```
+
+```{r}
+library(tidyverse)
+```
+
+# Simple manipulation and visualization
+
+```{r}
+colombian_wastes <- raw_data |> 
+  mutate(COUNTRY = as_factor(COUNTRY), WASTE_ID = as_factor(WASTE_ID)) |> 
+  filter(COUNTRY == "Colombia") |> 
+  select(WASTE_ID, POP_SERVED, WASTE_DIS)
+
+colombian_wastes |> 
+  head() |> 
+  knitr::kable()
+```
+
+```{r}
+#| fig-width: 10
+#| fig-height: 10
+ggplot(colombian_wastes) +
+  aes(y = reorder(WASTE_ID, POP_SERVED), x = POP_SERVED) +
+  geom_col() +
+  theme_minimal()
+```
+
+# More advanced stuff
+
+```{r}
+waste_pairs <- raw_data |> 
+  mutate(COUNTRY = as_factor(COUNTRY), WASTE_ID = as_factor(WASTE_ID)) |> 
+  filter(COUNTRY %in% c("Colombia", "Venezuela")) |> 
+  select(COUNTRY, WASTE_ID, POP_SERVED, WASTE_DIS)
+```
+
+```{r}
+#| label: fig-colombia-venezuela
+#| fig-cap: Comparisons between Colombian and Venezuelan population benefited from waste water plants
+#| fig-height: 6
+#| fig-pos: center
+test_result <- statsExpressions::two_sample_test(
+  waste_pairs, 
+  COUNTRY, 
+  POP_SERVED
+  )
+
+ggplot(waste_pairs) +
+  aes(x = COUNTRY, y= POP_SERVED, fill = COUNTRY) +
+  geom_boxplot(outlier.shape = NA) +
+  geom_jitter(width = 0.3, alpha = 0.5, size = 1.2) +
+  ggsignif::geom_signif(
+    comparisons = list(c("Colombia", "Venezuela")),
+    map_signif_level = TRUE, textsize = 6
+  ) +
+  labs(
+    title = "Two-Sample Welch's t-test",
+    subtitle = parse(text = test_result$expression),
+    x = "",
+    y = "Population served by plant"
+  ) +
+  theme_bw() +
+  theme(
+    legend.position = "none"
+  )
+```
+
+# Same as above
+
+```{r}
+waste_pairs <- raw_data |> 
+  mutate(COUNTRY = as_factor(COUNTRY), WASTE_ID = as_factor(WASTE_ID)) |> 
+  filter(COUNTRY %in% c("Germany", "Netherlands")) |> 
+  select(COUNTRY, WASTE_ID, POP_SERVED, WASTE_DIS)
+```
+
+```{r}
+#| label: fig-germany-netherlands
+#| fig-cap: Comparisons between German and Dutch population benefited from waste water plants
+#| fig-height: 9
+#| fig-pos: center
+#| warning: false
+test_result <- statsExpressions::two_sample_test(
+  waste_pairs, 
+  COUNTRY, 
+  POP_SERVED, 
+  type = "nonparametric"
+  )
+
+ggplot(waste_pairs) +
+  aes(x = COUNTRY, y= POP_SERVED, fill = COUNTRY) +
+  geom_boxplot(outlier.shape = NA) +
+  geom_jitter(width = 0.3, alpha = 0.5, size = 1.2) +
+  ggsignif::geom_signif(
+    comparisons = list(c("Netherlands", "Germany")),
+    # map_signif_level = TRUE, 
+    map_signif_level = \(p) sprintf("p = %.2g", p),
+    textsize = 6,
+    test = "wilcox.test"
+  ) +
+  labs(
+    title = "Two-Sample Welch's t-test",
+    subtitle = parse(text = test_result$expression),
+    x = "",
+    y = "Population served by plant"
+  ) +
+  theme_bw() +
+  theme(
+    legend.position = "none"
+  ) +
+  scale_y_log10()
+```
+
+## Some conclusions
+
+From the comparison between Colombia vs Venezuela benefited population from waste water plants [Fig. @fig-colombia-venezuela], there are at least two important highlights. First, both countries display relatively low numbers plants given their extensions (this is something more of an intuition coming from the other comparisons as well), and a second thing is that there is actually no differences regarding the population they are attending. The opposite happens when comparing Germany vs. Netherlands benefited populations [Fig. @fig-germany-netherlands].
