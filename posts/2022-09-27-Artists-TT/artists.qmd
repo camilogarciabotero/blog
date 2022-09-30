@@ -34,6 +34,11 @@ all_artists <- artists |>
   summarise(n = sum(artists_n))
 ```
 
+```{r}
+all_artists
+```
+
+
 ## Data visualization
 
 ```{r}

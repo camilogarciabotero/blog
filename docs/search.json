@@ -39,14 +39,14 @@
     "href": "posts/2022-09-27-Artists-TT/artists.html",
     "title": "Artists in the USA",
     "section": "",
-    "text": "library(tidyverse)\n\n── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──\n✔ ggplot2 3.3.6      ✔ purrr   0.3.4 \n✔ tibble  3.1.8      ✔ dplyr   1.0.10\n✔ tidyr   1.2.0      ✔ stringr 1.4.1 \n✔ readr   2.1.2      ✔ forcats 0.5.1 \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()"
+    "text": "This posts cover the code and figures from the datascience workshop with R, where we explore some basics from dplyr and ggplot2 packages using the tidytuesday data set from the current week (2021-09-27)."
   },
   {
     "objectID": "posts/2022-09-27-Artists-TT/artists.html#data-manipulation",
     "href": "posts/2022-09-27-Artists-TT/artists.html#data-manipulation",
     "title": "Artists in the USA",
     "section": "Data manipulation",
-    "text": "Data manipulation\n\nall_artists <- artists |>\n  mutate(across(state:type, as_factor)) |>\n  drop_na(artists_n) |>\n  group_by(race) |>\n  summarise(n = sum(artists_n))"
+    "text": "Data manipulation\n\nall_artists <- artists |>\n  mutate(across(state:type, as_factor)) |>\n  drop_na(artists_n) |>\n  group_by(race) |>\n  summarise(n = sum(artists_n))\n\n\nall_artists\n\n# A tibble: 5 × 2\n  race                   n\n  <fct>              <dbl>\n1 Hispanic          263555\n2 White            1763570\n3 African-American  144180\n4 Asian             152650\n5 Other              68378"
   },
   {
     "objectID": "posts/2022-09-27-Artists-TT/artists.html#data-visualization",

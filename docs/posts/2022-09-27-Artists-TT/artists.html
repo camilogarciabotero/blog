@@ -203,7 +203,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><section id="importing-libraries" class="level1"><h1>Importing libraries</h1>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><p>This posts cover the code and figures from the datascience workshop with R, where we explore some basics from <code>dplyr</code> and <code>ggplot2</code> packages using the <code>tidytuesday</code> data set from the current week (2021-09-27).</p>
+<section id="importing-libraries" class="level1"><h1>Importing libraries</h1>
 <div class="cell" data-hash="artists_cache/html/unnamed-chunk-1_34e23575c735c44c9bb3691d37772caf">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -259,9 +260,22 @@ dbl (4): all_workers_n, artists_n, artists_share, location_quotient
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">race</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">artists_n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="cell" data-hash="artists_cache/html/unnamed-chunk-5_0df1ca35f31956fac18f1c1e1dc42d9e">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">all_artists</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  race                   n
+  &lt;fct&gt;              &lt;dbl&gt;
+1 Hispanic          263555
+2 White            1763570
+3 African-American  144180
+4 Asian             152650
+5 Other              68378</code></pre>
+</div>
+</div>
 </section><section id="data-visualization" class="level2"><h2 class="anchored" data-anchor-id="data-visualization">Data visualization</h2>
-<div class="cell" data-autoanimate="true" data-hash="artists_cache/html/unnamed-chunk-5_53428b0a5889464034327e4d96607f6f">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">all_artists</span><span class="op">)</span> <span class="op">+</span></span>
+<div class="cell" data-autoanimate="true" data-hash="artists_cache/html/unnamed-chunk-6_2faced2301c01b3b574239e5abe6fb69">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">all_artists</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">race</span>, <span class="va">n</span><span class="op">)</span>, x <span class="op">=</span> <span class="va">n</span>, fill <span class="op">=</span> <span class="va">race</span>, label <span class="op">=</span> <span class="va">n</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
@@ -274,12 +288,12 @@ dbl (4): all_workers_n, artists_n, artists_share, location_quotient
 <span>    title <span class="op">=</span> <span class="st">"Number of artists across USA according to race"</span></span>
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="artists_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<p><img src="artists_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section><section id="alluvial-plots" class="level2"><h2 class="anchored" data-anchor-id="alluvial-plots">Alluvial plots</h2>
-<div class="cell" data-hash="artists_cache/html/unnamed-chunk-6_57a1b46bcc0e8a32a1e209853ce964fe">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">factored_artists</span> <span class="op">&lt;-</span> <span class="va">artists</span> <span class="op">|&gt;</span></span>
+<div class="cell" data-hash="artists_cache/html/unnamed-chunk-7_b4f8e94ce8f5e3b15710e991378f6197">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">factored_artists</span> <span class="op">&lt;-</span> <span class="va">artists</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="va">state</span><span class="op">:</span><span class="va">type</span>, <span class="va">as_factor</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">race</span>, <span class="va">type</span>, <span class="va">state</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span><span class="va">artists_n</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -289,8 +303,8 @@ dbl (4): all_workers_n, artists_n, artists_share, location_quotient
 `.groups` argument.</code></pre>
 </div>
 </div>
-<div class="cell" data-hash="artists_cache/html/unnamed-chunk-7_b3b2e335e914643755939f517cc546bc">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://corybrunson.github.io/ggalluvial/">ggalluvial</a></span><span class="op">)</span></span>
+<div class="cell" data-hash="artists_cache/html/unnamed-chunk-8_71632efc1234976c0aab30e4ee83be5f">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://corybrunson.github.io/ggalluvial/">ggalluvial</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://wilkox.org/ggfittext/">ggfittext</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">factored_artists</span><span class="op">)</span> <span class="op">+</span></span>
@@ -307,7 +321,7 @@ dbl (4): all_workers_n, artists_n, artists_share, location_quotient
 <span>    y <span class="op">=</span> <span class="st">""</span></span>
 <span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="artists_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<p><img src="artists_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
