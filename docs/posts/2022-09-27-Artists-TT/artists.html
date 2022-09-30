@@ -191,10 +191,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
 <li><a href="#importing-libraries" id="toc-importing-libraries" class="nav-link active" data-scroll-target="#importing-libraries">Importing libraries</a></li>
-  <li><a href="#importing-data-from-tt" id="toc-importing-data-from-tt" class="nav-link" data-scroll-target="#importing-data-from-tt">Importing data from TT</a></li>
-  <li><a href="#data-manipulation" id="toc-data-manipulation" class="nav-link" data-scroll-target="#data-manipulation">Data manipulation</a></li>
+  <li>
+<a href="#importing-data-from-tt" id="toc-importing-data-from-tt" class="nav-link" data-scroll-target="#importing-data-from-tt">Importing data from TT</a>
+  <ul class="collapse">
+<li><a href="#data-manipulation" id="toc-data-manipulation" class="nav-link" data-scroll-target="#data-manipulation">Data manipulation</a></li>
   <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data visualization</a></li>
   <li><a href="#alluvial-plots" id="toc-alluvial-plots" class="nav-link" data-scroll-target="#alluvial-plots">Alluvial plots</a></li>
+  </ul>
+</li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/blog/edit/main/posts/2022-09-27-Artists-TT/artists.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
 </nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -247,7 +251,7 @@ dbl (4): all_workers_n, artists_n, artists_share, location_quotient
 #   ²​artists_n, ³​artists_share, ⁴​location_quotient</code></pre>
 </div>
 </div>
-</section><section id="data-manipulation" class="level1"><h1>Data manipulation</h1>
+<section id="data-manipulation" class="level2"><h2 class="anchored" data-anchor-id="data-manipulation">Data manipulation</h2>
 <div class="cell" data-hash="artists_cache/html/unnamed-chunk-4_53b5f06d024ca65928b0e93fad689822">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">all_artists</span> <span class="op">&lt;-</span> <span class="va">artists</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="va">state</span><span class="op">:</span><span class="va">type</span>, <span class="va">as_factor</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -255,7 +259,7 @@ dbl (4): all_workers_n, artists_n, artists_share, location_quotient
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">race</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">artists_n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="data-visualization" class="level1"><h1>Data visualization</h1>
+</section><section id="data-visualization" class="level2"><h2 class="anchored" data-anchor-id="data-visualization">Data visualization</h2>
 <div class="cell" data-autoanimate="true" data-hash="artists_cache/html/unnamed-chunk-5_53428b0a5889464034327e4d96607f6f">
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">all_artists</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">race</span>, <span class="va">n</span><span class="op">)</span>, x <span class="op">=</span> <span class="va">n</span>, fill <span class="op">=</span> <span class="va">race</span>, label <span class="op">=</span> <span class="va">n</span><span class="op">)</span> <span class="op">+</span></span>
@@ -273,7 +277,7 @@ dbl (4): all_workers_n, artists_n, artists_share, location_quotient
 <p><img src="artists_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section><section id="alluvial-plots" class="level1"><h1>Alluvial plots</h1>
+</section><section id="alluvial-plots" class="level2"><h2 class="anchored" data-anchor-id="alluvial-plots">Alluvial plots</h2>
 <div class="cell" data-hash="artists_cache/html/unnamed-chunk-6_57a1b46bcc0e8a32a1e209853ce964fe">
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">factored_artists</span> <span class="op">&lt;-</span> <span class="va">artists</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="va">state</span><span class="op">:</span><span class="va">type</span>, <span class="va">as_factor</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -308,7 +312,7 @@ dbl (4): all_workers_n, artists_n, artists_share, location_quotient
 </div>
 
 
-</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{garcía-botero2021,
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{garcía-botero2021,
   author = {Camilo García-Botero},
   editor = {},
   title = {Artists in the {USA}},

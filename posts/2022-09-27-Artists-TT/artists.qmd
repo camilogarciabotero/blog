@@ -22,7 +22,7 @@ artists <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/ti
 artists
 ```
 
-# Data manipulation
+## Data manipulation
 
 ```{r}
 all_artists <- artists |>
@@ -32,7 +32,7 @@ all_artists <- artists |>
   summarise(n = sum(artists_n))
 ```
 
-# Data visualization
+## Data visualization
 
 ```{r}
 #| echo: true
@@ -51,7 +51,7 @@ ggplot(all_artists) +
   )
 ```
 
-# Alluvial plots
+## Alluvial plots
 
 ```{r}
 factored_artists <- artists |>
