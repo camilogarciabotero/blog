@@ -1,0 +1,82 @@
+---
+title: "Artists in the USA"
+format: html
+categories: [tidytuesday, code, analysis]
+toc: true
+date: 2021-09-27
+---
+
+# Importing libraries
+
+```{r}
+library(tidyverse)
+```
+
+# Importing data from TT
+
+```{r}
+artists <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-09-27/artists.csv")
+```
+
+```{r}
+artists
+```
+
+# Data manipulation
+
+```{r}
+all_artists <- artists |>
+  mutate(across(state:type, as_factor)) |>
+  drop_na(artists_n) |>
+  group_by(race) |>
+  summarise(n = sum(artists_n))
+```
+
+# Data visualization
+
+```{r}
+#| echo: true
+#| autoanimate: true
+ggplot(all_artists) +
+  aes(y = reorder(race, n), x = n, fill = race, label = n) +
+  geom_col() +
+  geom_text() +
+  theme_bw() +
+  theme(
+    legend.position = "none",
+    axis.title.y = element_blank()
+  ) +
+  labs(
+    title = "Number of artists across USA according to race"
+  )
+```
+
+# Alluvial plots
+
+```{r}
+factored_artists <- artists |>
+  mutate(across(state:type, as_factor)) |> 
+  group_by(race, type, state) |> 
+  summarise(artists_n) |>
+  drop_na()
+```
+
+```{r}
+#| fig-height: 10
+library(ggalluvial)
+library(ggfittext)
+
+ggplot(factored_artists) +
+  aes(y = artists_n, axis1 = race, axis2 = type, fill = race) +
+  geom_stratum(alpha = .5) +
+  geom_alluvium() +
+  geom_fit_text(stat = "stratum", aes(label = after_stat(stratum))) +
+  theme_bw() +
+  theme(
+    legend.position = "none"
+  ) +
+  scale_fill_viridis_d() +
+  labs(
+    y = ""
+  )
+```

@@ -5,8 +5,8 @@
 <meta name="generator" content="quarto-1.1.251">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Camilo García-Botero">
-<meta name="dcterms.date" content="2020-07-20">
-<title>Miscellaneous - How changes the students’ debts?</title>
+<meta name="dcterms.date" content="2021-09-27">
+<title>Miscellaneous - Artists in the USA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -124,12 +124,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
-<meta name="citation_title" content="How changes the students&amp;amp;#039; debts?">
+<meta name="citation_title" content="Artists in the USA">
 <meta name="citation_author" content="Camilo García-Botero">
-<meta name="citation_publication_date" content="2020-02-27">
-<meta name="citation_cover_date" content="2020-02-27">
-<meta name="citation_year" content="2020">
-<meta name="citation_online_date" content="2020-02-27">
+<meta name="citation_publication_date" content="2021-09-27">
+<meta name="citation_cover_date" content="2021-09-27">
+<meta name="citation_year" content="2021">
+<meta name="citation_online_date" content="2021-09-27">
 <meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp/blog">
 <meta name="citation_language" content="en">
 </head>
@@ -149,7 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       </div> <!-- /container-fluid -->
     </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">How changes the students’ debts?</h1>
+      <h1 class="title">Artists in the USA</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">tidytuesday</div>
                 <div class="quarto-category">code</div>
@@ -178,7 +178,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 20, 2020</p>
+        <p class="date">September 27, 2021</p>
       </div>
     </div>
       
@@ -190,133 +190,134 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto"><nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#students-debts-over-time" id="toc-students-debts-over-time" class="nav-link active" data-scroll-target="#students-debts-over-time">Students debts over time</a></li>
-  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/blog/edit/main/posts/2021-02-27-Wealth-TT/wealth_debt.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<li><a href="#importing-libraries" id="toc-importing-libraries" class="nav-link active" data-scroll-target="#importing-libraries">Importing libraries</a></li>
+  <li><a href="#importing-data-from-tt" id="toc-importing-data-from-tt" class="nav-link" data-scroll-target="#importing-data-from-tt">Importing data from TT</a></li>
+  <li><a href="#data-manipulation" id="toc-data-manipulation" class="nav-link" data-scroll-target="#data-manipulation">Data manipulation</a></li>
+  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data visualization</a></li>
+  <li><a href="#alluvial-plots" id="toc-alluvial-plots" class="nav-link" data-scroll-target="#alluvial-plots">Alluvial plots</a></li>
+  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/camilogarciabotero/blog/edit/main/posts/2022-09-27-Artists-TT/artists.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/camilogarciabotero/blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
 </nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><p>Using the <code>tidytuesdayR</code> package this task is easy:</p>
-<div class="cell" data-hash="wealth_debt_cache/html/unnamed-chunk-1_9908e3bd057d13137913b2c40b3ffeb9">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data</span> <span class="op">&lt;-</span>  <span class="fu">tidytuesdayR</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tidytuesdayR/man/tt_load.html">tt_load</a></span><span class="op">(</span><span class="fl">2021</span>, week <span class="op">=</span> <span class="fl">7</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><section id="importing-libraries" class="level1"><h1>Importing libraries</h1>
+<div class="cell" data-hash="artists_cache/html/unnamed-chunk-1_34e23575c735c44c9bb3691d37772caf">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>--- Compiling #TidyTuesday Information for 2021-02-09 ----</code></pre>
+<pre><code>── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+✔ ggplot2 3.3.6      ✔ purrr   0.3.4 
+✔ tibble  3.1.8      ✔ dplyr   1.0.10
+✔ tidyr   1.2.0      ✔ stringr 1.4.1 
+✔ readr   2.1.2      ✔ forcats 0.5.1 
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()</code></pre>
 </div>
+</div>
+</section><section id="importing-data-from-tt" class="level1"><h1>Importing data from TT</h1>
+<div class="cell" data-hash="artists_cache/html/unnamed-chunk-2_e787d281906c43f100b799f78138dfe5">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">artists</span> <span class="op">&lt;-</span> <span class="fu">readr</span><span class="fu">::</span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-09-27/artists.csv"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>--- There are 11 files available ---</code></pre>
+<pre><code>Rows: 3380 Columns: 7
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): state, race, type
+dbl (4): all_workers_n, artists_n, artists_share, location_quotient
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>--- Starting Download ---</code></pre>
 </div>
+<div class="cell" data-hash="artists_cache/html/unnamed-chunk-3_9439eeec4cb5251402b7389c6d4e03f9">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">artists</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-    Downloading file 1 of 11: `home_owner.csv`
-    Downloading file 2 of 11: `income_aggregate.csv`
-    Downloading file 3 of 11: `income_distribution.csv`
-    Downloading file 4 of 11: `income_limits.csv`
-    Downloading file 5 of 11: `income_mean.csv`
-    Downloading file 6 of 11: `income_time.csv`
-    Downloading file 7 of 11: `lifetime_earn.csv`
-    Downloading file 8 of 11: `lifetime_wealth.csv`
-    Downloading file 9 of 11: `race_wealth.csv`
-    Downloading file 10 of 11: `retirement.csv`
-    Downloading file 11 of 11: `student_debt.csv`</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>--- Download complete ---</code></pre>
-</div>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">student_debt</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">$</span><span class="va">student_debt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-hash="wealth_debt_cache/html/unnamed-chunk-2_e27851f84715cacebabe4c68d3d98f43">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">student_debt</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<table class="table table-sm table-striped">
-<thead><tr class="header">
-<th style="text-align: right;">year</th>
-<th style="text-align: left;">race</th>
-<th style="text-align: right;">loan_debt</th>
-<th style="text-align: right;">loan_debt_pct</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">2016</td>
-<td style="text-align: left;">White</td>
-<td style="text-align: right;">11108.410</td>
-<td style="text-align: right;">0.3367511</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2016</td>
-<td style="text-align: left;">Black</td>
-<td style="text-align: right;">14224.770</td>
-<td style="text-align: right;">0.4183588</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">2016</td>
-<td style="text-align: left;">Hispanic</td>
-<td style="text-align: right;">7493.999</td>
-<td style="text-align: right;">0.2189689</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2013</td>
-<td style="text-align: left;">White</td>
-<td style="text-align: right;">8363.605</td>
-<td style="text-align: right;">0.2845555</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">2013</td>
-<td style="text-align: left;">Black</td>
-<td style="text-align: right;">10302.660</td>
-<td style="text-align: right;">0.4122773</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2013</td>
-<td style="text-align: left;">Hispanic</td>
-<td style="text-align: right;">3177.410</td>
-<td style="text-align: right;">0.1570289</td>
-</tr>
-</tbody>
-</table>
+<pre><code># A tibble: 3,380 × 7
+   state                race     type       all_worke…¹ artis…² artist…³ locat…⁴
+   &lt;chr&gt;                &lt;chr&gt;    &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;
+ 1 Alabama              Hispanic Architects       88165      45  5.10e-4   0.875
+ 2 Alaska               Hispanic Architects       26875      15  5.58e-4   0.957
+ 3 Arizona              Hispanic Architects     1033370     270  2.61e-4   0.448
+ 4 Arkansas             Hispanic Architects      101405      NA NA        NA    
+ 5 California           Hispanic Architects     7470730    3870  5.18e-4   0.888
+ 6 Colorado             Hispanic Architects      594525     200  3.36e-4   0.577
+ 7 Connecticut          Hispanic Architects      288845     150  5.19e-4   0.891
+ 8 Delaware             Hispanic Architects       41365       0 NA        NA    
+ 9 District of Columbia Hispanic Architects       44885     185  4.12e-3   7.07 
+10 Florida              Hispanic Architects     2752995    2900  1.05e-3   1.81 
+# … with 3,370 more rows, and abbreviated variable names ¹​all_workers_n,
+#   ²​artists_n, ³​artists_share, ⁴​location_quotient</code></pre>
 </div>
 </div>
-<section id="students-debts-over-time" class="level1"><h1>Students debts over time</h1>
-<div class="cell" data-hash="wealth_debt_cache/html/unnamed-chunk-3_edd0e38422f5f7ecaa4ab4e543af1f2a">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://csdaw.github.io/ggprism/">ggprism</a></span><span class="op">)</span></span>
-<span><span class="va">student_debt</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">loan_debt</span>, color <span class="op">=</span> <span class="va">race</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+</section><section id="data-manipulation" class="level1"><h1>Data manipulation</h1>
+<div class="cell" data-hash="artists_cache/html/unnamed-chunk-4_53b5f06d024ca65928b0e93fad689822">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">all_artists</span> <span class="op">&lt;-</span> <span class="va">artists</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="va">state</span><span class="op">:</span><span class="va">type</span>, <span class="va">as_factor</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">artists_n</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">race</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">artists_n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="data-visualization" class="level1"><h1>Data visualization</h1>
+<div class="cell" data-autoanimate="true" data-hash="artists_cache/html/unnamed-chunk-5_53428b0a5889464034327e4d96607f6f">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">all_artists</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">race</span>, <span class="va">n</span><span class="op">)</span>, x <span class="op">=</span> <span class="va">n</span>, fill <span class="op">=</span> <span class="va">race</span>, label <span class="op">=</span> <span class="va">n</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_col</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span></span>
-<span>    legend.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>    axis.line <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_line</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#000000"</span><span class="op">)</span>,</span>
-<span>    axis.ticks <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_line</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#000000"</span><span class="op">)</span>,</span>
-<span>    panel.grid <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_line</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#DDDDDD"</span>, linetype <span class="op">=</span> <span class="st">"dotted"</span><span class="op">)</span> <span class="co"># Soft gray</span></span>
+<span>    legend.position <span class="op">=</span> <span class="st">"none"</span>,</span>
+<span>    axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
-<span>    x <span class="op">=</span> <span class="st">""</span>,</span>
-<span>    y <span class="op">=</span> <span class="st">"Loan debt (US)"</span></span>
-<span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>guide <span class="op">=</span> <span class="st">"prism_offset_minor"</span>, limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1990</span>,<span class="fl">2015</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>guide <span class="op">=</span> <span class="st">"prism_offset_minor"</span>, limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1000</span>, <span class="fl">10000</span><span class="op">)</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 9 row(s) containing missing values (geom_path).</code></pre>
-</div>
+<span>    title <span class="op">=</span> <span class="st">"Number of artists across USA according to race"</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="wealth_debt_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+<p><img src="artists_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="alluvial-plots" class="level1"><h1>Alluvial plots</h1>
+<div class="cell" data-hash="artists_cache/html/unnamed-chunk-6_57a1b46bcc0e8a32a1e209853ce964fe">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">factored_artists</span> <span class="op">&lt;-</span> <span class="va">artists</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="va">state</span><span class="op">:</span><span class="va">type</span>, <span class="va">as_factor</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">race</span>, <span class="va">type</span>, <span class="va">state</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span><span class="va">artists_n</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'race', 'type'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+</div>
+<div class="cell" data-hash="artists_cache/html/unnamed-chunk-7_b3b2e335e914643755939f517cc546bc">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://corybrunson.github.io/ggalluvial/">ggalluvial</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://wilkox.org/ggfittext/">ggfittext</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">factored_artists</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">artists_n</span>, axis1 <span class="op">=</span> <span class="va">race</span>, axis2 <span class="op">=</span> <span class="va">type</span>, fill <span class="op">=</span> <span class="va">race</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="http://corybrunson.github.io/ggalluvial/reference/geom_stratum.html">geom_stratum</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">.5</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="http://corybrunson.github.io/ggalluvial/reference/geom_alluvium.html">geom_alluvium</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://wilkox.org/ggfittext/reference/geom_fit_text.html">geom_fit_text</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"stratum"</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes_eval.html">after_stat</a></span><span class="op">(</span><span class="va">stratum</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span></span>
+<span>    legend.position <span class="op">=</span> <span class="st">"none"</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span></span>
+<span>    y <span class="op">=</span> <span class="st">""</span></span>
+<span>  <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="artists_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
 
-</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{garcía-botero2020,
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{garcía-botero2021,
   author = {Camilo García-Botero},
   editor = {},
-  title = {How Changes the Students’ Debts?},
-  date = {2020-02-27},
+  title = {Artists in the {USA}},
+  date = {2021-09-27},
   url = {https://camilogarciabotero.github.io/biocomp/blog},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-garcía-botero2020" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Camilo García-Botero. 2020. <span>“How Changes the Students’
-Debts?”</span> <a href="https://camilogarciabotero.github.io/biocomp/blog">https://camilogarciabotero.github.io/biocomp/blog</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-garcía-botero2021" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+Camilo García-Botero. 2021. <span>“Artists in the USA.”</span> <a href="https://camilogarciabotero.github.io/biocomp/blog">https://camilogarciabotero.github.io/biocomp/blog</a>.
 </div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
