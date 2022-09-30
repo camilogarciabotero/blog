@@ -130,7 +130,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <meta name="citation_cover_date" content="2021-09-27">
 <meta name="citation_year" content="2021">
 <meta name="citation_online_date" content="2021-09-27">
-<meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/biocomp/blog">
+<meta name="citation_fulltext_html_url" content="https://camilogarciabotero.github.io/blog">
 <meta name="citation_language" content="en">
 </head>
 <body class="floating nav-fixed">
@@ -203,7 +203,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </nav><!-- margin-sidebar --><div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><p>This posts cover the code and figures from the datascience workshop with R, where we explore some basics from <code>dplyr</code> and <code>ggplot2</code> packages using the <code>tidytuesday</code> data set from the current week (2021-09-27).</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><p>This post covers the code and figures from the datascience workshop with R, where we explore some basics from <code>dplyr</code> and <code>ggplot2</code> packages using the <code>tidytuesday</code> data set from the current week (2021-09-27).</p>
 <section id="importing-libraries" class="level1"><h1>Importing libraries</h1>
 <div class="cell" data-hash="artists_cache/html/unnamed-chunk-1_34e23575c735c44c9bb3691d37772caf">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -253,12 +253,12 @@ dbl (4): all_workers_n, artists_n, artists_share, location_quotient
 </div>
 </div>
 <section id="data-manipulation" class="level2"><h2 class="anchored" data-anchor-id="data-manipulation">Data manipulation</h2>
-<div class="cell" data-hash="artists_cache/html/unnamed-chunk-4_53b5f06d024ca65928b0e93fad689822">
+<div class="cell" data-hash="artists_cache/html/unnamed-chunk-4_84f28145e6ddb9503d2d78e34335dc90">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">all_artists</span> <span class="op">&lt;-</span> <span class="va">artists</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="va">state</span><span class="op">:</span><span class="va">type</span>, <span class="va">as_factor</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">artists_n</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">race</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">artists_n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">artists_n</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-hash="artists_cache/html/unnamed-chunk-5_0df1ca35f31956fac18f1c1e1dc42d9e">
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">all_artists</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -331,11 +331,11 @@ dbl (4): all_workers_n, artists_n, artists_share, location_quotient
   editor = {},
   title = {Artists in the {USA}},
   date = {2021-09-27},
-  url = {https://camilogarciabotero.github.io/biocomp/blog},
+  url = {https://camilogarciabotero.github.io/blog},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-garcía-botero2021" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Camilo García-Botero. 2021. <span>“Artists in the USA.”</span> <a href="https://camilogarciabotero.github.io/biocomp/blog">https://camilogarciabotero.github.io/biocomp/blog</a>.
+Camilo García-Botero. 2021. <span>“Artists in the USA.”</span> <a href="https://camilogarciabotero.github.io/blog">https://camilogarciabotero.github.io/blog</a>.
 </div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

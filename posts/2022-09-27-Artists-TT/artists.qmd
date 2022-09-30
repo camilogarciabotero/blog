@@ -6,7 +6,7 @@ toc: true
 date: 2021-09-27
 ---
 
-This posts cover the code and figures from the datascience workshop with R, where we explore some basics from `dplyr` and `ggplot2` packages using the `tidytuesday` data set from the current week (2021-09-27). 
+This post covers the code and figures from the datascience workshop with R, where we explore some basics from `dplyr` and `ggplot2` packages using the `tidytuesday` data set from the current week (2021-09-27). 
 
 # Importing libraries
 
@@ -31,7 +31,7 @@ all_artists <- artists |>
   mutate(across(state:type, as_factor)) |>
   drop_na(artists_n) |>
   group_by(race) |>
-  summarise(n = sum(artists_n))
+  summarize(n = sum(artists_n))
 ```
 
 ```{r}
