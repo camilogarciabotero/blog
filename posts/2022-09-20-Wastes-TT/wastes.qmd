@@ -4,6 +4,7 @@ format: html
 categories: [tidytuesday, code, analysis]
 toc: true
 date: 2021-09-20
+image: wwp-image.jpeg
 ---
 
 # Data importing

@@ -3,6 +3,7 @@ title: "How do students' loans change over time?"
 categories: [tidytuesday, code, analysis]
 date: 2021-02-09
 toc: true
+image: student-loan-image.jpeg
 ---
 
 Using the `tidytuesdayR` package this task is easy:
