@@ -4,6 +4,7 @@ format: html
 categories: [tidytuesday, code, analysis]
 toc: true
 date: 2021-09-27
+image: artitsts-img.jpeg
 ---
 
 This post covers the code and figures from the datascience workshop with R, where we explore some basics from `dplyr` and `ggplot2` packages using the `tidytuesday` data set from the current week (2021-09-27). 
