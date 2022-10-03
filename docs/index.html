@@ -76,9 +76,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -144,25 +144,18 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-blog">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="tidytuesday,code,analysis" data-listing-date-sort="1632718800000" data-listing-file-modified-sort="1664554471690" data-listing-reading-time-sort="1.025">
-<div class="thumbnail">
-<a href="./posts/2022-09-27-Artists-TT/artists.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2022-09-27-Artists-TT/artists.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2022-09-27-Artists-TT/artists.html">
-<h3 class="no-anchor listing-title">
+<div class="quarto-listing quarto-listing-container-grid" id="listing-blog">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="tidytuesday,code,analysis" data-listing-date-sort="1632718800000" data-listing-file-modified-sort="1664763788725" data-listing-reading-time-sort="1.025">
+<a href="./posts/2022-09-27-Artists-TT/artists.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/2022-09-27-Artists-TT/artitsts-img.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 Artists in the USA
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('tidytuesday'); return false;">
 tidytuesday
@@ -174,40 +167,31 @@ code
 analysis
 </div>
 </div>
-<a href="./posts/2022-09-27-Artists-TT/artists.html">
-<div class="listing-description">
+<div class="card-text listing-description">
 This post covers the code and figures from the datascience workshop with R, where we explore some basics from <code>dplyr</code> and <code>ggplot2</code> packages using the <code>tidytuesday</code> data set from the current week (2021-09-27).
 </div>
-</a>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Camilo García-Botero
 </div>
-<div class="metadata">
-<a href="./posts/2022-09-27-Artists-TT/artists.html">
 <div class="listing-date">
 Sep 27, 2021
 </div>
-<div class="listing-author">
-Camilo García-Botero
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="tidytuesday,code,analysis" data-listing-date-sort="1632114000000" data-listing-file-modified-sort="1664327676852" data-listing-reading-time-sort="2.45">
-<div class="thumbnail">
-<a href="./posts/2022-09-20-Wastes-TT/wastes.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2022-09-20-Wastes-TT/wastes.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2022-09-20-Wastes-TT/wastes.html">
-<h3 class="no-anchor listing-title">
+<div class="g-col-1" data-index="1" data-categories="tidytuesday,code,analysis" data-listing-date-sort="1632114000000" data-listing-file-modified-sort="1664763364525" data-listing-reading-time-sort="2.45">
+<a href="./posts/2022-09-20-Wastes-TT/wastes.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/2022-09-20-Wastes-TT/wwp-image.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 Population benefited from waste water plants
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('tidytuesday'); return false;">
 tidytuesday
@@ -219,36 +203,31 @@ code
 analysis
 </div>
 </div>
-<a href="./posts/2022-09-20-Wastes-TT/wastes.html">
-<div class="listing-description">
+<div class="card-text listing-description">
 As usual we can read the {tidytuesday} data directly from the source using the associated link:
 </div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2022-09-20-Wastes-TT/wastes.html">
-<div class="listing-date">
-Sep 20, 2021
-</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Camilo García-Botero
 </div>
+<div class="listing-date">
+Sep 20, 2021
+</div>
+</div>
+</div>
+</div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="news,code,analysis,tidytuesday,animated" data-listing-date-sort="1619758800000" data-listing-file-modified-sort="1662245185481" data-listing-reading-time-sort="3.885">
-<div class="thumbnail">
-<p><a href="./posts/2020-09-01-Netflix-TT/netflix.html"> <img src="./posts/2020-09-01-Netflix-TT/image.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/2020-09-01-Netflix-TT/netflix.html">
-<h3 class="no-anchor listing-title">
+<div class="g-col-1" data-index="2" data-categories="news,code,analysis,tidytuesday,animated" data-listing-date-sort="1619758800000" data-listing-file-modified-sort="1662245185481" data-listing-reading-time-sort="3.885">
+<a href="./posts/2020-09-01-Netflix-TT/netflix.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/2020-09-01-Netflix-TT/image.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 Netflix titles per country
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
 news
@@ -266,36 +245,31 @@ tidytuesday
 animated
 </div>
 </div>
-<a href="./posts/2020-09-01-Netflix-TT/netflix.html">
-<div class="listing-description">
+<div class="card-text listing-description">
 Since Netflix has been dominating all the straemaing platforms, several months ago decided to analyze the releasing titles nationality. This was possible by using several rstats libraries and the released dataset on the TidyTuesday project.
 </div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2020-09-01-Netflix-TT/netflix.html">
-<div class="listing-date">
-Apr 30, 2021
-</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Camilo García-Botero
 </div>
+<div class="listing-date">
+Apr 30, 2021
+</div>
+</div>
+</div>
+</div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="bioinformatics,code,analysis" data-listing-date-sort="1614229200000" data-listing-file-modified-sort="1662254346268" data-listing-reading-time-sort="2.225">
-<div class="thumbnail">
-<p><a href="./posts/2021-01-25-Kmer-analysis/kmer_counts.html"> <img src="./posts/2021-01-25-Kmer-analysis/imgs/carbon_kmer_count.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-01-25-Kmer-analysis/kmer_counts.html">
-<h3 class="no-anchor listing-title">
+<div class="g-col-1" data-index="3" data-categories="bioinformatics,code,analysis" data-listing-date-sort="1614229200000" data-listing-file-modified-sort="1662254346268" data-listing-reading-time-sort="2.225">
+<a href="./posts/2021-01-25-Kmer-analysis/kmer_counts.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/2021-01-25-Kmer-analysis/imgs/carbon_kmer_count.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 K-mer counts on genomes
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('bioinformatics'); return false;">
 bioinformatics
@@ -307,40 +281,31 @@ code
 analysis
 </div>
 </div>
-<a href="./posts/2021-01-25-Kmer-analysis/kmer_counts.html">
-<div class="listing-description">
+<div class="card-text listing-description">
 The first steps of this challenge requires genome data. A very practical way to download data programmatically is to use <code>ncbi-genome-downlad</code> program. Here a you can see how to use it:
 </div>
-</a>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Camilo García-Botero
 </div>
-<div class="metadata">
-<a href="./posts/2021-01-25-Kmer-analysis/kmer_counts.html">
 <div class="listing-date">
 Feb 25, 2021
 </div>
-<div class="listing-author">
-Camilo García-Botero
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="tidytuesday,code,analysis" data-listing-date-sort="1612846800000" data-listing-file-modified-sort="1663870877654" data-listing-reading-time-sort="0.625">
-<div class="thumbnail">
-<a href="./posts/2021-02-09-Wealth-TT/wealth_debt.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2021-02-09-Wealth-TT/wealth_debt.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-02-09-Wealth-TT/wealth_debt.html">
-<h3 class="no-anchor listing-title">
+<div class="g-col-1" data-index="4" data-categories="tidytuesday,code,analysis" data-listing-date-sort="1612846800000" data-listing-file-modified-sort="1664763681287" data-listing-reading-time-sort="0.625">
+<a href="./posts/2021-02-09-Wealth-TT/wealth_debt.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/2021-02-09-Wealth-TT/student-loan-image.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 How do students’ loans change over time?
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('tidytuesday'); return false;">
 tidytuesday
@@ -352,36 +317,31 @@ code
 analysis
 </div>
 </div>
-<a href="./posts/2021-02-09-Wealth-TT/wealth_debt.html">
-<div class="listing-description">
+<div class="card-text listing-description">
 Using the <code>tidytuesdayR</code> package this task is easy:
 </div>
-</a>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Camilo García-Botero
 </div>
-<div class="metadata">
-<a href="./posts/2021-02-09-Wealth-TT/wealth_debt.html">
 <div class="listing-date">
 Feb 9, 2021
 </div>
-<div class="listing-author">
-Camilo García-Botero
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="tidytuesday,code,analysis" data-listing-date-sort="1603688400000" data-listing-file-modified-sort="1662347360017" data-listing-reading-time-sort="0.925">
-<div class="thumbnail">
-<p><a href="./posts/2020-10-26-Plastics-TT/plastics.html"> <img src="./posts/2020-10-26-Plastics-TT/plastics.jpeg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/2020-10-26-Plastics-TT/plastics.html">
-<h3 class="no-anchor listing-title">
+<div class="g-col-1" data-index="5" data-categories="tidytuesday,code,analysis" data-listing-date-sort="1603688400000" data-listing-file-modified-sort="1662347360017" data-listing-reading-time-sort="0.925">
+<a href="./posts/2020-10-26-Plastics-TT/plastics.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/2020-10-26-Plastics-TT/plastics.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 Plastic pollution in countries
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('tidytuesday'); return false;">
 tidytuesday
@@ -393,36 +353,31 @@ code
 analysis
 </div>
 </div>
-<a href="./posts/2020-10-26-Plastics-TT/plastics.html">
-<div class="listing-description">
+<div class="card-text listing-description">
 Using the <code>tidytuesdayR</code> package this task is easy:
 </div>
-</a>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Camilo García-Botero
 </div>
-<div class="metadata">
-<a href="./posts/2020-10-26-Plastics-TT/plastics.html">
 <div class="listing-date">
 Oct 26, 2020
 </div>
-<div class="listing-author">
-Camilo García-Botero
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="tidytuesday,code,analysis" data-listing-date-sort="1595221200000" data-listing-file-modified-sort="1662238790456" data-listing-reading-time-sort="1.8">
-<div class="thumbnail">
-<p><a href="./posts/2020-08-31-Coffee-TT/coffee.html"> <img src="./posts/2020-08-31-Coffee-TT/thumbnail.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/2020-08-31-Coffee-TT/coffee.html">
-<h3 class="no-anchor listing-title">
+<div class="g-col-1" data-index="6" data-categories="tidytuesday,code,analysis" data-listing-date-sort="1595221200000" data-listing-file-modified-sort="1662238790456" data-listing-reading-time-sort="1.8">
+<a href="./posts/2020-08-31-Coffee-TT/coffee.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/2020-08-31-Coffee-TT/thumbnail.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 What’s the best coffee?
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('tidytuesday'); return false;">
 tidytuesday
@@ -434,22 +389,20 @@ code
 analysis
 </div>
 </div>
-<a href="./posts/2020-08-31-Coffee-TT/coffee.html">
-<div class="listing-description">
+<div class="card-text listing-description">
 This is my first Tidy Tuesday contribution and will be playing around a little bit with the coffee rating data.
 </div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2020-08-31-Coffee-TT/coffee.html">
-<div class="listing-date">
-Jul 20, 2020
-</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Camilo García-Botero
 </div>
-</a>
+<div class="listing-date">
+Jul 20, 2020
 </div>
+</div>
+</div>
+</div>
+</a>
 </div>
 </div>
 <div class="listing-no-matching d-none">
