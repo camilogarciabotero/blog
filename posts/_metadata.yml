@@ -30,3 +30,4 @@ citation:
 google-scholar: true
 
 fig-align: center
+df-print: paged
