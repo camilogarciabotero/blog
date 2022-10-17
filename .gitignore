@@ -1,2 +1,4 @@
 /.quarto/
 .about.qmd
+
+/.luarc.json

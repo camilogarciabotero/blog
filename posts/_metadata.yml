@@ -9,11 +9,13 @@ execute:
 # Enable banner style title blocks
 title-block-banner: true
 toc-location: left
+
 # Giscus comments
 
 comments:
   giscus:
     repo: camilogarciabotero/blog
+    theme: transparent_dark
     category: Blog
 
 author: 
