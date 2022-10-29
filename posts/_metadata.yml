@@ -20,7 +20,6 @@ comments:
 
 author: 
   - name: Camilo García-Botero
-    affiliation: Eafit University
     orcid: 0000-0002-0426-7007
     url: https://camilogarciabotero.github.io/
 
@@ -34,3 +33,5 @@ google-scholar: true
 fig-align: center
 df-print: paged
 code-link: true
+
+date-modified: today
